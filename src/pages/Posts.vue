@@ -154,8 +154,8 @@ export default {
                                         class="text-red-600">*</span></MainLabel>
                                 <input id="title"
                                     class="w-full px-3 py-2 border border-gray-300 rounded disabled:bg-gray-100"
-                                    :disabled="creatingPost" v-model="newPost.title" placeholder="Título interesante..."
-                                    required />
+                                    :disabled="creatingPost" v-model="newPost.title"
+                                    placeholder="Título interesante..." />
                             </div>
 
                             <div>
@@ -164,7 +164,7 @@ export default {
                                 <textarea id="post" rows="4"
                                     class="w-full px-3 py-2 border border-gray-300 rounded disabled:bg-gray-100"
                                     :disabled="creatingPost" v-model="newPost.content"
-                                    placeholder="Escribí tu contenido acá..." required></textarea>
+                                    placeholder="Escribí tu contenido acá..."></textarea>
                             </div>
 
                             <div>
