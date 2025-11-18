@@ -37,68 +37,44 @@ export default {
 </script>
 
 <template>
-    <div class="min-h-screen flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-6xl w-full flex bg-white rounded-xl shadow-lg overflow-hidden">
-            <!-- Columna izquierda: Imagen del animal -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4">
+        <div class="max-w-6xl w-full flex bg-white rounded-lg shadow overflow-hidden">
+
             <div class="hidden md:block md:w-1/2 bg-yellow-100">
-                <img 
-                    src="../img/dog-hero.webp" 
-                    alt="Animal companion"
-                    class="w-full h-full object-cover"
-                >
+                <img src="../img/dog-hero.webp" alt="Animal companion" class="w-full h-full object-cover">
             </div>
 
-            <!-- Columna derecha: Formulario -->
-            <div class="w-full md:w-1/2 p-8 sm:p-12">
+            <div class="w-full md:w-1/2 p-8">
                 <div class="text-center mb-8">
-                    <MainH1 class="font-extrabold">Crear una Cuenta</MainH1>
-                    <p class="mt-2 text-sm text-gray-600">
+                    <MainH1>Crear una Cuenta</MainH1>
+                    <p class="mt-2 text-gray-600">
                         Unite a nuestra comunidad de amantes de los animales
                     </p>
                 </div>
 
                 <form @submit.prevent="handleSubmit" class="space-y-6">
-                    <MainInput
-                        id="email"
-                        type="email"
-                        label="Email"
-                        v-model="user.email"
-                        :disabled="loading"
-                        required
-                        placeholder="tu@email.com"
-                    />
+                    <MainInput id="email" type="email" label="Email" v-model="user.email" :disabled="loading" required
+                        placeholder="tu@email.com" />
 
-                    <MainInput
-                        id="password"
-                        type="password"
-                        label="Contraseña"
-                        v-model="user.password"
-                        :disabled="loading"
-                        required
-                        placeholder="********"
-                        :minlength="6"
-                    />
+                    <MainInput id="password" type="password" label="Contraseña" v-model="user.password"
+                        :disabled="loading" required placeholder="********" :minlength="6" />
 
                     <AlertPop v-if="wrongCredentials" class="mt-4">
                         Error en el registro. La contraseña debe tener al menos 6 caracteres.
                     </AlertPop>
 
                     <div>
-                        <MainButton 
-                            type="submit"
-                            class="w-full font-medium "
-                            :disabled="loading"
-                        >
+                        <MainButton type="submit" class="w-full" :disabled="loading">
                             <span v-if="!loading">Crear Cuenta</span>
                             <span v-else>Creando cuenta...</span>
                         </MainButton>
                     </div>
                 </form>
 
-                <div class="mt-6 text-center text-sm text-gray-600">
+                <div class="mt-6 text-center text-gray-600">
                     <p>
                         ¿Ya tenés una cuenta?
-                        <router-link to="/login" class="font-medium text-yellow-600 hover:text-yellow-500">
+                        <router-link to="/login" class="text-yellow-600 hover:text-yellow-500">
                             Iniciá sesión
                         </router-link>
                     </p>
