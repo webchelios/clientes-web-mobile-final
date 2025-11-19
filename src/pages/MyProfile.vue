@@ -76,7 +76,7 @@ export default {
                 <img v-if="authUser.photoURL" :src="authUser.photoURL" alt="Foto de perfil"
                   class="h-40 w-40 rounded-full object-cover border-4 border-white shadow">
                 <div v-else
-                  class="h-40 w-40 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 text-5xl font-bold border-4 border-white shadow">
+                  class="h-40 w-40 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 text-5xl font-bold border-4 border-white shadow">
                   {{ authUser.displayName ? authUser.displayName.charAt(0) : authUser.email.charAt(0).toUpperCase() }}
                 </div>
               </div>
@@ -93,10 +93,10 @@ export default {
 
               <div v-if="authUser.pet" class="mt-6">
                 <Subtitle class="text-xl text-gray-800 mb-4">Mi Mascota</Subtitle>
-                <div class="bg-indigo-50 rounded p-4">
+                <div class="bg-yellow-50 rounded p-4">
                   <div class="flex items-start">
                     <div
-                      class="h-16 w-16 rounded-full bg-white flex items-center justify-center text-indigo-600 text-2xl font-bold mr-4">
+                      class="h-16 w-16 rounded-full bg-white flex items-center justify-center text-yellow-600 text-2xl font-bold mr-4">
                       🐾
                     </div>
                     <div>
@@ -119,7 +119,7 @@ export default {
               <router-link :to="`/post/${post.id}`" class="block">
                 <div class="flex justify-between items-start">
                   <div>
-                    <h3 class="text-lg text-gray-900 hover:text-indigo-600">
+                    <h3 class="text-lg text-gray-900 hover:text-yellow-600">
                       {{ post.title }}
                     </h3>
                     <p class="text-gray-500 mt-1">
@@ -140,9 +140,9 @@ export default {
 
         <div v-else class="bg-white rounded-lg shadow p-6 text-center">
           <Subtitle class="text-xl text-gray-800 mb-4">Mis Publicaciones</Subtitle>
-          <p class="text-gray-500">Aún no has creado ninguna publicación.</p>
+          <p class="text-gray-500">Aún no creaste ninguna publicación.</p>
           <router-link to="/posts"
-            class="inline-block mt-4 px-4 py-2 rounded text-white bg-indigo-600 hover:bg-indigo-700">
+            class="inline-block mt-4 px-4 py-2 rounded text-white bg-yellow-600 hover:bg-yellow-700">
             Crear mi primer post
           </router-link>
         </div>

@@ -60,7 +60,7 @@ export default {
                         :disabled="loading" required placeholder="********" :minlength="6" />
 
                     <AlertPop v-if="wrongCredentials" class="mt-4">
-                        Error en el registro. La contraseña debe tener al menos 6 caracteres.
+                        La contraseña debe tener al menos 6 caracteres.
                     </AlertPop>
 
                     <div>
@@ -74,7 +74,7 @@ export default {
                 <div class="mt-6 text-center text-gray-600">
                     <p>
                         ¿Ya tenés una cuenta?
-                        <router-link to="/login" class="text-yellow-600 hover:text-yellow-500">
+                        <router-link to="/iniciar-sesion" class="text-yellow-600 hover:text-yellow-500">
                             Iniciá sesión
                         </router-link>
                     </p>

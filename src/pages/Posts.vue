@@ -34,6 +34,7 @@ export default {
                 id: null,
                 email: null,
                 displayName: null,
+                photoURL: null
             },
             unsubscribeFromAuth: () => { },
 
@@ -197,7 +198,7 @@ export default {
                             </div>
 
                             <AlertPop v-if="wrongPostCreation" class="mt-2">
-                                Error: Tenés que completar el título y el contenido del post.
+                                Tenés que completar el título y el contenido del post.
                             </AlertPop>
 
                             <div class="pt-2">

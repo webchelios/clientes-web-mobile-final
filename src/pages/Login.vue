@@ -74,7 +74,7 @@ export default {
                 <div class="mt-6 text-center text-gray-600">
                     <p>
                         ¿No tenés una cuenta?
-                        <router-link to="/register" class="text-yellow-600 hover:text-yellow-500">
+                        <router-link to="/registro" class="text-yellow-600 hover:text-yellow-500">
                             Registrate
                         </router-link>
                     </p>
