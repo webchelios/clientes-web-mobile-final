@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, onSnapshot, orderBy, query, serverTimestamp, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "./firebase";
 import { getExtensionFromFile } from "../libraries/file";
 import { getFileURL, uploadFile } from "./file-storage";
@@ -10,20 +10,20 @@ import { getFileURL, uploadFile } from "./file-storage";
  * @returns {Promise<null>}
  */
 export async function savePost(postData, imageFile) {
-    
+
     const postRef = await addDoc(collection(db, "posts"), {
-      ...postData,
-      created_at: serverTimestamp()
+        ...postData,
+        created_at: serverTimestamp()
     });
-    
+
     if (imageFile) {
-      const imageUrl = await updateImg(imageFile, postRef.id);
-      await updateDoc(postRef, { img: imageUrl });
+        const imageUrl = await updateImg(imageFile, postRef.id);
+        await updateDoc(postRef, { img: imageUrl });
     }
-    
+
     return postRef.id;
-  }
-  
+}
+
 
 /**
  * Permite editar un Post
@@ -39,7 +39,7 @@ export function editPost(data, id) {
     return updateDoc(refPost, {
         ...data
     }).then(() => {
-    
+
     })
 }
 
@@ -107,4 +107,10 @@ export async function updateImg(imgData, id) {
 export async function updatePostImg(id, data) {
     const refPost = doc(db, `posts/${id}`);
     await updateDoc(refPost, data);
+}
+
+
+export async function deletePost(id) {
+    const refPost = doc(db, `posts/${id}`);
+    await deleteDoc(refPost)
 }

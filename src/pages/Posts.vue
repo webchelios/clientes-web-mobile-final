@@ -268,6 +268,11 @@ export default {
                                                         Editar
                                                     </MiniButton>
                                                 </router-link>
+                                                <router-link :to="`/delete/${post.id}`">
+                                                    <MiniButton class="text-xs py-1 px-2">
+                                                        Eliminar
+                                                    </MiniButton>
+                                                </router-link>
                                             </div>
                                         </div>
                                     </div>

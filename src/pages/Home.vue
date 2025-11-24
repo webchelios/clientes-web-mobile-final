@@ -50,7 +50,7 @@ export default {
 
     <div class="bg-yellow-200 py-12">
       <div class="container mx-auto text-center px-6">
-        <h3 class="text-3xl md:text-4xl font-bold text-yellow-600 mb-6">¿Qué esperás para unirte?</h3>
+        <h2 class="text-3xl md:text-4xl font-bold text-yellow-600 mb-6">¿Qué esperás para unirte?</h2>
         <RouterLink to="/registro">
           <MainButton>
             Registrate gratis

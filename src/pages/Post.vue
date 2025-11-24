@@ -28,6 +28,7 @@ export default {
         comments: [],
         img: null,
       },
+      // TODO: skeleton loader
       postsLoaded: false,
       unsubscribeFromComments: () => { },
 

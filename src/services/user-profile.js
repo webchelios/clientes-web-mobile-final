@@ -19,6 +19,7 @@ export async function getUserProfileById(id) {
         pet: userDoc.data().pet,
         petBio: userDoc.data().petBio,
         photoURL: userDoc.data().photoURL,
+        role: userDoc.data().role
     }
 }
 
@@ -26,7 +27,7 @@ export async function getUserProfileById(id) {
  * Crea un perfil de usuario en Firestore
  * 
  * @param {string} id 
- * @param {{email: string}} data 
+ * @param {{email: string, role: string}} data 
  * @returns {Promise}
  */
 export async function createUserProfile(id, data) {
@@ -43,6 +44,6 @@ export async function createUserProfile(id, data) {
  * @returns {Promise<void>}
  */
 export async function updateUserProfile(id, data) {
-    const refUser = doc(db,`users/${id}`);
+    const refUser = doc(db, `users/${id}`);
     await updateDoc(refUser, data);
 }

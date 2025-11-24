@@ -12,7 +12,7 @@ export default {
 }
 </script>
 <template>
-    <div class="flex justify-between flex-wrap sm:flex-nowrap rounded border border-gray-300 p-4 shadow">
+    <div class="flex flex-col justify-between flex-wrap gap-4 sm:flex-nowrap rounded border border-gray-300 p-4 shadow">
         <section>
             <h2 class="font-bold">Nombre de usuario:</h2>
             <p v-if="user.displayName">{{ user.displayName }}</p>
