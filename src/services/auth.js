@@ -31,13 +31,13 @@ onAuthStateChanged(auth, async user => {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      role: user.role,
     });
 
     const userProfile = await getUserProfileById(user.uid);
     setUserData({
       pet: userProfile.pet,
       petBio: userProfile.petBio,
+      role: userProfile.role ?? "user",
       fullyLoaded: true,
     })
   } else {

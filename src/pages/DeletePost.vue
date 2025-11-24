@@ -49,8 +49,7 @@ export default {
             <h2 class="text-xl font-semibold text-gray-800 mb-4">Confirmar eliminación</h2>
 
             <p class="text-gray-600 mb-6">
-                ¿Estás seguro de que querés eliminar "{{ post.title }}" (id: {{ post.id }})?
-                Esta acción no se puede deshacer.
+                ¿Estás seguro de que querés eliminar <span class="font-bold">"{{ post.title }}"</span>?
             </p>
 
             <div class="flex gap-3 justify-end">

@@ -34,7 +34,8 @@ export default {
                 id: null,
                 email: null,
                 displayName: null,
-                photoURL: null
+                photoURL: null,
+                role: null,
             },
             unsubscribeFromAuth: () => { },
 
@@ -262,13 +263,18 @@ export default {
                                             <span class="text-xs text-gray-500">
                                                 {{ formatDate(post.created_at) }}
                                             </span>
-                                            <div v-if="authUser.email === post.email" class="mt-2">
-                                                <router-link :to="`/edit/${post.id}`">
+
+                                            <div class="flex flex-row gap-2 mt-2">
+                                                <router-link v-if="authUser.email === post.email"
+                                                    :to="`/edit/${post.id}`">
                                                     <MiniButton class="text-xs py-1 px-2">
                                                         Editar
                                                     </MiniButton>
                                                 </router-link>
-                                                <router-link :to="`/delete/${post.id}`">
+
+                                                <router-link
+                                                    v-if="authUser.email === post.email || authUser.role === 'admin'"
+                                                    :to="`/delete/${post.id}`">
                                                     <MiniButton class="text-xs py-1 px-2">
                                                         Eliminar
                                                     </MiniButton>
