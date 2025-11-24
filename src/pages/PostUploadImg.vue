@@ -124,7 +124,7 @@ export default {
 
         <div class="mb-8">
           <h1 class="text-2xl text-gray-900">Agregar imagen al post</h1>
-          <p class="mt-2 text-gray-600">Selecciona una imagen para enriquecer tu publicación</p>
+          <p class="mt-2 text-gray-600">Seleccioná una imagen para enriquecer tu publicación</p>
         </div>
 
         <form @submit.prevent="handleFileUpload" class="space-y-6">
@@ -135,23 +135,14 @@ export default {
 
             <div class="flex justify-center px-6 py-5 border-2 border-gray-300 border-dashed rounded">
               <div class="text-center">
-                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
-                  aria-hidden="true">
-                  <path
-                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+
                 <div class="flex text-sm text-gray-600">
                   <label for="img" class="cursor-pointer text-yellow-600 hover:text-yellow-500">
-                    <span>Sube un archivo</span>
+                    <span>Hacé click para subir un archivo</span>
                     <input id="img" type="file" accept="image/*" @change="handleFileSelection" :disabled="uploadingImg"
                       class="sr-only">
                   </label>
-                  <p class="pl-1">o arrastra y suelta</p>
                 </div>
-                <p class="text-xs text-gray-500">
-                  PNG, JPG, GIF hasta 5MB
-                </p>
               </div>
             </div>
           </div>
@@ -165,7 +156,7 @@ export default {
           </div>
 
           <AlertPop v-if="showValidationError" class="mt-2">
-            Por favor selecciona una imagen válida para continuar
+            Por favor seleccioná una imagen válida para continuar
           </AlertPop>
 
           <div class="pt-4">

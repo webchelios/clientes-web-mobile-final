@@ -115,7 +115,7 @@ export default {
           </div>
 
           <AlertPop v-if="showValidationError" class="mt-2">
-            Por favor selecciona una imagen para continuar
+            Por favor seleccioná una imagen para continuar
           </AlertPop>
 
           <div class="pt-4">
