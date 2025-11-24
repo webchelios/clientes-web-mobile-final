@@ -14,6 +14,7 @@ export async function getPostById(id) {
     return {
         id: postDoc.id,
         user_id: postDoc.data().user_id,
+        user_photo: postDoc.data().user_photo,
         email: postDoc.data().email,
         displayName: postDoc.data()?.displayName,
         content: postDoc.data().content,
@@ -32,7 +33,7 @@ export async function getPostById(id) {
  */
 export async function createComment(id, data) {
     const refPost = doc(db, `posts/${id}`);
-  
+
     await updateDoc(refPost, {
         saveServerTimestamp: serverTimestamp()
     });
@@ -62,12 +63,12 @@ export async function subscribeToComments(id, callback) {
     const refPost = doc(db, `posts/${id}`);
 
     return onSnapshot(refPost, snapshot => {
-            const data = snapshot.data();
-            const post = {
-                comments: data.comments || []
-            };
-            
-            callback(post);
+        const data = snapshot.data();
+        const post = {
+            comments: data.comments || []
+        };
+
+        callback(post);
     });
 
 }

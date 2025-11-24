@@ -140,7 +140,7 @@ export default {
 
         <div v-else class="bg-white rounded-lg shadow p-6 text-center">
           <Subtitle class="text-xl text-gray-800 mb-4">Mis Publicaciones</Subtitle>
-          <p class="text-gray-500">Aún no creaste ninguna publicación.</p>
+          <p class="text-gray-500">Todavía no creaste ninguna publicación.</p>
           <router-link to="/posts"
             class="inline-block mt-4 px-4 py-2 rounded text-white bg-yellow-600 hover:bg-yellow-700">
             Crear mi primer post

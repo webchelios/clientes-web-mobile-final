@@ -57,6 +57,7 @@ export default {
 
                 const postId = await savePost({
                     user_id: this.authUser.id,
+                    user_photo: this.authUser.photoURL,
                     email: this.authUser.email,
                     displayName: this.authUser.displayName,
                     content: this.newPost.content,
@@ -173,7 +174,7 @@ export default {
                                 <MainLabel class="block text-gray-700 mb-1">Imagen</MainLabel>
                                 <label
                                     class="flex flex-col items-center px-4 py-3 bg-white rounded border border-dashed border-gray-300 cursor-pointer">
-                                    <span class="text-sm text-yellow-600 hover:text-yellow-500 mb-1">Hacé clic para
+                                    <span class="text-sm text-yellow-600 hover:text-yellow-500">Hacé clic para
                                         seleccionar una
                                         imagen</span>
                                     <input type="file" id="img" accept="image/*" @change="handleFileSelection"
@@ -224,6 +225,7 @@ export default {
                         </div>
 
                         <ul v-else class="space-y-4">
+                            <h1 v-if="posts.length === 0">No hay posts para mostrar</h1>
                             <li v-for="post in sortedPosts"
                                 class="border border-gray-200 rounded-lg p-4 hover:shadow transition-shadow">
                                 <router-link :to="`/post/${post.id}`" class="block">
@@ -232,9 +234,13 @@ export default {
                                             <div class="flex items-start gap-3">
                                                 <div>
                                                     <div
-                                                        class="h-10 w-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold">
-                                                        {{ post.displayName ? post.displayName.charAt(0) :
-                                                            post.email.charAt(0).toUpperCase() }}
+                                                        class="h-10 w-10 rounded-full overflow-hidden bg-orange-100 flex items-center justify-center">
+                                                        <img v-if="post.user_photo" :src="post.user_photo"
+                                                            class="h-full w-full object-cover">
+                                                        <span v-else class="text-orange-600 font-bold">
+                                                            {{ post.displayName?.charAt(0) ||
+                                                                post.email.charAt(0).toUpperCase() }}
+                                                        </span>
                                                     </div>
                                                 </div>
                                                 <div>

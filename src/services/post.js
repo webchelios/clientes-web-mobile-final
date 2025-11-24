@@ -61,6 +61,7 @@ export function subscribeToAllPosts(callback) {
             return {
                 id: doc.id,
                 user_id: doc.data().user_id,
+                user_photo: doc.data().user_photo,
                 email: doc.data().email,
                 displayName: doc.data().displayName,
                 title: doc.data().title,

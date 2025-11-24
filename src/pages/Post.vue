@@ -22,6 +22,7 @@ export default {
       post: {
         id: null,
         user_id: null,
+        user_photo: null,
         email: null,
         content: null,
         title: null,
@@ -35,6 +36,7 @@ export default {
       authUser: {
         id: null,
         email: null,
+        photoURL: null,
       },
       unsubscribeFromAuth: () => { },
     }
@@ -50,6 +52,7 @@ export default {
       this.showCommentError = false;
       createComment(this.post.id, {
         user_id: this.authUser.id,
+        user_photo: this.authUser.photoURL,
         email: this.authUser.email,
         comment: this.newComment.comment,
       });
@@ -109,10 +112,6 @@ export default {
 
               <div class="flex items-center">
                 <router-link :to="`/usuario/${post.user_id}`" class="flex items-center">
-                  <div
-                    class="h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 font-bold mr-3">
-                    {{ post.email?.charAt(0).toUpperCase() }}
-                  </div>
                   <span class="text-gray-600">
                     {{ post.displayName ? post.displayName : post.email?.split('@')[0] }}
                   </span>
@@ -128,6 +127,10 @@ export default {
               <router-link :to="`/edit/${post.id}`"
                 class="text-sm px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700">
                 Editar
+              </router-link>
+              <router-link :to="`/delete/${post.id}`"
+                class="text-sm px-3 py-1 rounded bg-red-100 hover:bg-red-200 text-red-700">
+                Eliminar
               </router-link>
             </div>
           </div>

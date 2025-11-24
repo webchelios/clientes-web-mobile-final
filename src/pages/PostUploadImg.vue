@@ -37,6 +37,7 @@ export default {
       authUser: {
         id: null,
         email: null,
+        photoURL: null,
       },
       unsubscribeFromAuth: () => { },
     }
@@ -45,6 +46,7 @@ export default {
     sendComment() {
       createComment(this.post.id, {
         user_id: this.authUser.id,
+        user_photo: this.authUser.photoURL,
         email: this.authUser.email,
         comment: this.newComment.comment,
       })

@@ -109,7 +109,7 @@ export default {
       <div class="mx-auto w-full max-w-md">
         <div class="text-center">
           <h2 class="text-3xl text-gray-900">Cambiar Contraseña</h2>
-          <p class="mt-2 text-gray-600">Ingresa tu contraseña actual y la nueva contraseña</p>
+          <p class="mt-2 text-gray-600">Ingresá tu contraseña actual y la nueva contraseña</p>
         </div>
 
         <div class="mt-8 bg-white py-8 px-4 shadow rounded-lg">

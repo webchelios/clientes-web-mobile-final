@@ -19,6 +19,7 @@ export function subscribeToUserPosts(callback, userEmail) {
             return {
                 id: doc.id,
                 user_id: doc.data().user_id,
+                user_photo: doc.data().user_photo,
                 email: doc.data().email,
                 content: doc.data().content,
                 title: doc.data().title,
